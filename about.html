@@ -3,15 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Soul & Root | Our Mission and Values</title>
-    <meta name="description" content="Learn about the journey and philosophy behind Soul & Root wellness studio.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>About Soul & Root | Our Brand & Mission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            height: 70vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(26, 60, 52, 0.6), rgba(26, 60, 52, 0.6)), url('images/hero_bg_new.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .about-features {
+            padding: 140px 0;
+            background: var(--color-bg);
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .features-text h2 {
+            font-size: 3.5rem;
+            margin-bottom: 56px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            background: var(--color-white);
+            padding: 32px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--color-forest);
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: 0;
+        }
+
+        .about-images {
+            position: relative;
+            height: 600px;
+        }
+
+        .img-stack-1 {
+            width: 70%;
+            height: 80%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .img-stack-2 {
+            width: 70%;
+            height: 80%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            border-radius: 40px;
+            overflow: hidden;
+            border: 12px solid var(--color-bg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .img-stack-1 img, .img-stack-2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-text h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .sacred-journey {
+            padding: 140px 0;
+            background: var(--color-white);
+        }
+
+        .zen-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 100px;
+        }
+
+        .zen-header h2 {
+            font-size: 3rem;
+            margin-bottom: 32px;
+        }
+
+        .zen-header p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--color-text-light);
+        }
+
+        .organic-grid-three {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .organic-img-wrapper {
+            border-radius: 40px;
+            overflow: hidden;
+            height: 600px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .organic-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .organic-content {
+            margin-top: 48px;
+        }
+
+        .organic-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+        }
+
+        .organic-content p {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        .aura-manifesto-section {
+            padding-bottom: 140px;
+        }
+
+        /* Sanctuary Promise UX */
+        .sanctuary-promise {
+            padding: 140px 0;
+            background: var(--color-bg);
+            overflow: hidden;
+        }
+
+        .promise-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .promise-text h2 {
+            font-size: 4.5rem;
+            line-height: 1;
+            margin-bottom: 40px;
+        }
+
+        .promise-text p {
+            font-size: 1.4rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 56px;
+        }
+
+        .aura-composition {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .aura-card-layered {
+            width: 100%;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Card Colors - Light & Ethereal */
+        .card-1 { 
+            background: rgba(219, 230, 225, 0.4); 
+            border: 1px solid rgba(26, 60, 52, 0.1);
+        }
+        .card-2 { 
+            background: rgba(255, 255, 255, 0.8); 
+            border: 1px solid rgba(26, 60, 52, 0.05);
+        }
+        .card-3 { 
+            background: rgba(143, 161, 153, 0.15); 
+            border: 1px solid rgba(26, 60, 52, 0.1);
+        }
+
+        .aura-card-layered {
+            width: 100%;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.5s ease;
+            color: var(--color-forest);
+        }
+
+        .aura-card-layered h4 {
+            color: var(--color-forest);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+            font-weight: 700;
+            opacity: 0.8;
+        }
+
+        .aura-card-layered p {
+            font-size: 1.15rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+            color: var(--color-text-light);
+        }
+
+        .aura-card-layered:hover {
+            transform: translateX(15px);
+            box-shadow: var(--shadow-lg);
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
     <header class="navbar sticky-nav">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -24,57 +274,122 @@
             <div class="nav-menu" id="nav-menu">
                 <nav class="nav-links">
                     <a href="about.html" class="active">About</a>
-                    <a href="pricing.html">Pricing</a>
+                    <a href="classes.html">Classes</a>
+                    <a href="teachers.html">Teachers</a>
+                    <a href="philosophy.html">Philosophy</a>
                     <a href="contact.html">Contact</a>
                 </nav>
-                <a href="#schedule" class="btn btn-primary nav-cta">Book a Class</a>
+                <a href="pricing.html" class="btn btn-primary nav-cta">Book a Class</a>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1920&auto=format&fit=crop');">
-            <div class="container">
-                <span class="experience-badge" style="color: var(--color-sage);">Our Story</span>
-                <h1>The Heart of the Sanctuary</h1>
-                <p>Nurturing spirit and strength since 2018.</p>
+        <section class="page-hero">
+            <div class="container fade-in-up">
+                <span class="experience-badge" style="color: var(--color-sage);">OUR STORY</span>
+                <h1>Awaken Your Highest Self<br>with Soul & Root</h1>
+                <p style="font-size: 1.5rem; max-width: 800px; margin: 24px auto 0; opacity: 0.9;">Nurturing spirit and strength since 2018, we provide a sanctuary for collective growth and inner harmony.</p>
             </div>
         </section>
 
-        <section class="about-content container" style="padding: 120px 0;">
-            <div class="cs-grid">
-                <div class="cs-text">
-                    <h2 class="section-title">Rooted in Purpose</h2>
-                    <p>Soul & Root was born from a simple realization: that modern wellness often forgets the connection between physical vitality and mental peace. We created a space where you don't have to choose between a powerful workout and a deep meditation.</p>
-                    <p>Our methodology combines ancient wisdom with modern physiological research, ensuring every breath and every movement serves your highest self.</p>
+        <section class="about-features">
+            <div class="container features-container">
+                <div class="features-text reveal-up">
+                    <h4 class="section-subtitle">OUR FOCUS</h4>
+                    <h2>A space to slow down, get stronger, and reconnect with yourself.</h2>
+                    <p style="font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 48px;">Soul & Root is more than just a studio; it's a sanctuary where every breath is an opportunity to recenter, and every movement is a step closer to your highest self. We combine ancient wisdom with modern vitality.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>2.5k+</h3>
+                            <p>Students joined classes</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>98%</h3>
+                            <p>Positive overall reviews</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>120+</h3>
+                            <p>Weekly classes per branch</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="cs-image hover-lift">
-                    <img src="https://images.unsplash.com/photo-1593811167562-9cef47bffcf8?q=80&w=800&auto=format&fit=crop" alt="Our practice">
+                <div class="about-images">
+                    <div class="img-stack-1 hover-lift">
+                        <img src="images/yoga_indoor.png" alt="Indoor Yoga">
+                    </div>
+                    <div class="img-stack-2 hover-lift">
+                        <img src="images/meditation_outdoor.png" alt="Outdoor Meditation">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="values cs-approach">
+        <section class="sacred-journey">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2>Our Core Values</h2>
-                    <p>The pillars that guide every session and every interaction.</p>
+                <div class="zen-header reveal-up">
+                    <h4 class="section-subtitle">OUR NARRATIVE</h4>
+                    <h2>The Soul & Root Experience</h2>
+                    <p>We are a dedicated sanctuary born from a singular vision: to bridge the gap between ancient meditative stillness and the physiological demands of modern performance. At Soul & Root, we don't just teach you how to sit; we teach you how to thrive.</p>
                 </div>
-                <div class="cs-phases">
-                    <div class="phase-card">
-                        <div class="phase-number">01</div>
-                        <h3>Radical Inclusivity</h3>
-                        <p>Wellness is a birthright. We welcome every body, every background, and every level of experience.</p>
+
+                <div class="organic-grid-three">
+                    <div class="organic-item reveal-up">
+                        <div class="organic-img-wrapper hover-lift" style="height: 450px; margin-bottom: 40px;">
+                            <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?q=80&w=800&auto=format&fit=crop" alt="What We Do">
+                        </div>
+                        <div class="organic-content" style="text-align: center; padding: 0 20px;">
+                            <h3 style="font-size: 2rem; margin-bottom: 20px;">The Craft</h3>
+                            <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.7;">We combine Dynamic Meditation, Breathwork, and Mindful Movement into a singular curriculum. These tools are curated to lower cortisol and sharpen your focus.</p>
+                        </div>
                     </div>
-                    <div class="phase-card">
-                        <div class="phase-number">02</div>
-                        <h3>Dynamic Resilience</h3>
-                        <p>We believe in building strength that lasts—both on the mat and in your daily life.</p>
+
+                    <div class="organic-item reveal-up" style="margin-top: 80px;">
+                        <div class="organic-img-wrapper hover-lift" style="height: 450px; margin-bottom: 40px;">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" alt="Our Mission">
+                        </div>
+                        <div class="organic-content" style="text-align: center; padding: 0 20px;">
+                            <h3 style="font-size: 2rem; margin-bottom: 20px;">The Mission</h3>
+                            <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.7;">To provide a sanctuary in a world of constant digital interruption. We help you rediscover your internal rhythm and carry that stillness into your daily life.</p>
+                        </div>
                     </div>
-                    <div class="phase-card">
-                        <div class="phase-number">03</div>
-                        <h3>Mindful Growth</h3>
-                        <p>Progress is not just physical. We celebrate the quiet shifts in perspective and mental clarity.</p>
+
+                    <div class="organic-item reveal-up">
+                        <div class="organic-img-wrapper hover-lift" style="height: 450px; margin-bottom: 40px;">
+                            <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?q=80&w=800&auto=format&fit=crop" alt="Why It Matters">
+                        </div>
+                        <div class="organic-content" style="text-align: center; padding: 0 20px;">
+                            <h3 style="font-size: 2rem; margin-bottom: 20px;">The Impact</h3>
+                            <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.7;">Building unshakable resilience for the real world. Our goal is to ensure you remain calm and powerful, whether you are in the boardroom or at home.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sanctuary-promise">
+            <div class="container">
+                <div class="promise-layout reveal-up">
+                    <div class="promise-text">
+                        <h4 class="section-subtitle">THE SOUL & ROOT PROMISE</h4>
+                        <h2>A Ritual for<br>Modern Vitality</h2>
+                        <p>We believe that meditation is not an escape from reality, but a deeper dive into it. Our promise is to deliver a practice that is as effective as it is beautiful, turning every session into a modern ritual for the soul.</p>
+                        <a href="pricing.html" class="btn btn-primary">Begin Your Ritual</a>
+                    </div>
+                    <div class="aura-composition">
+                        <div class="aura-card-layered card-1">
+                            <h4>The Mind</h4>
+                            <p>Cultivating deep presence and cognitive clarity in every moment.</p>
+                        </div>
+                        <div class="aura-card-layered card-2">
+                            <h4>The Breath</h4>
+                            <p>Integrated breathwork to reset your nervous system instantly.</p>
+                        </div>
+                        <div class="aura-card-layered card-3">
+                            <h4>The Movement</h4>
+                            <p>Dynamic sequences built for anatomical precision and grace.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,43 +403,46 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
                     Soul & Root
                 </a>
-                <p>Unlocking your potential through mindful practices that nurture both spirit and strength. Your sanctuary for collective growth and inner peace.</p>
+                <p>A sanctuary for mindfulness and dynamic vitality, helping you discover your inner peace.</p>
             </div>
             <div class="footer-links">
-                <div class="link-group">
-                    <h4>Explore</h4>
-                    <a href="about.html">About</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="contact.html">Contact</a>
+                <div class="link-column">
+                    <h4>Studio</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="teachers.html">Our Team</a>
+                    <a href="philosophy.html">Philosophy</a>
                 </div>
-                <div class="link-group">
-                    <h4>Connect</h4>
-                    <a href="#">Instagram</a>
-                    <a href="#">Youtube</a>
-                    <a href="#">Newsletter</a>
+                <div class="link-column">
+                    <h4>Classes</h4>
+                    <a href="classes.html">Foundation Flow</a>
+                    <a href="classes.html">Dynamic Strength</a>
+                    <a href="classes.html">Zen Connection</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom container">
+        <div class="container footer-bottom">
             <p>&copy; 2026 Soul & Root. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
             }
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('fade-in-up');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
         });
     </script>
 </body>

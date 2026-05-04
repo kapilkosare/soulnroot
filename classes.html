@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Classes | Soul & Root Guided Sessions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            height: 70vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(26, 60, 52, 0.6), rgba(26, 60, 52, 0.6)), url('images/hero_slide_2.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .class-showcase {
+            padding: 140px 0;
+            background: var(--color-white);
+        }
+
+        .class-list-detailed {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            margin-top: 80px;
+        }
+
+        .class-item-premium {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            background: var(--color-bg);
+            border-radius: 40px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            box-shadow: var(--shadow-md);
+            align-items: center;
+        }
+
+        .class-item-premium:hover {
+            transform: scale(1.01);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .class-item-premium:nth-child(even) {
+            direction: rtl;
+        }
+        .class-item-premium:nth-child(even) .class-visual,
+        .class-item-premium:nth-child(even) .class-info {
+            direction: ltr;
+        }
+
+        .class-visual {
+            position: relative;
+            height: 550px;
+            overflow: hidden;
+        }
+
+        .class-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .class-item-premium:hover .class-visual img {
+            transform: scale(1.1);
+        }
+
+        .class-badges {
+            position: absolute;
+            top: 32px;
+            left: 32px;
+            display: flex;
+            gap: 12px;
+            z-index: 5;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .class-info {
+            padding: 60px;
+        }
+
+        .class-info h3 {
+            font-size: 2.25rem;
+            margin-bottom: 20px;
+            color: var(--color-forest);
+        }
+
+        .class-description {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--color-text-light);
+            margin-bottom: 32px;
+        }
+
+        .class-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 40px;
+            border-top: 1px solid rgba(26, 60, 52, 0.1);
+            padding-top: 32px;
+        }
+
+        .detail-item h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-forest);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .detail-item p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        .benefits-detailed {
+            padding: 140px 0;
+            background: var(--color-bg);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .benefits-list li {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .benefits-list .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 700;
+            color: var(--color-forest);
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar sticky-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                Soul & Root
+            </a>
+            <div class="hamburger" id="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <nav class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="classes.html" class="active">Classes</a>
+                    <a href="teachers.html">Teachers</a>
+                    <a href="philosophy.html">Philosophy</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <a href="pricing.html" class="btn btn-primary nav-cta">Book a Class</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container fade-in-up">
+                <span class="experience-badge" style="color: var(--color-sage);">THE PRACTICE</span>
+                <h1>Live Guided Sessions<br>at Soul & Root</h1>
+                <p style="font-size: 1.5rem; max-width: 800px; margin: 24px auto 0; opacity: 0.9;">For beginners to advanced practitioners, join anytime from home and deepen your practice with us.</p>
+            </div>
+        </section>
+
+        <section class="class-showcase">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <h4 class="section-subtitle">OUR CURRICULUM</h4>
+                    <h2>Find Your Perfect Rhythm</h2>
+                </div>
+
+                <div class="class-list-detailed">
+                    <!-- Foundation Flow -->
+                    <div class="class-item-premium reveal-up">
+                        <div class="class-visual">
+                            <div class="class-badges">
+                                <span class="badge">60 Min</span>
+                                <span class="badge">Beginner</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" alt="Foundation Flow">
+                        </div>
+                        <div class="class-info">
+                            <h3>Foundation Flow</h3>
+                            <p class="class-description">A sanctuary for those starting their journey. We focus on the fundamental geometry of poses and the rhythmic connection between breath and movement.</p>
+                            <div class="class-details-grid">
+                                <div class="detail-item">
+                                    <h4>What to Expect</h4>
+                                    <p>Slow-paced guidance, postural alignment, and gentle stretching.</p>
+                                </div>
+                                <div class="detail-item">
+                                    <h4>Core Benefits</h4>
+                                    <p>Increased mobility, stress reduction, and foundational strength.</p>
+                                </div>
+                            </div>
+                            <a href="pricing.html" class="btn btn-primary">Book This Session</a>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Strength -->
+                    <div class="class-item-premium reveal-up">
+                        <div class="class-visual">
+                            <div class="class-badges">
+                                <span class="badge">75 Min</span>
+                                <span class="badge">Intermediate</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=800&auto=format&fit=crop" alt="Dynamic Strength">
+                        </div>
+                        <div class="class-info">
+                            <h3>Dynamic Strength</h3>
+                            <p class="class-description">A high-energy fusion of Vinyasa and functional mobility. This class is designed to challenge your physical limits while maintaining mental equanimity.</p>
+                            <div class="class-details-grid">
+                                <div class="detail-item">
+                                    <h4>What to Expect</h4>
+                                    <p>Powerful flows, core-intensive sequences, and sweat-inducing movement.</p>
+                                </div>
+                                <div class="detail-item">
+                                    <h4>Core Benefits</h4>
+                                    <p>Metabolic boost, lean muscle tone, and unshakable focus.</p>
+                                </div>
+                            </div>
+                            <a href="pricing.html" class="btn btn-primary">Book This Session</a>
+                        </div>
+                    </div>
+
+                    <!-- Zen Connection -->
+                    <div class="class-item-premium reveal-up">
+                        <div class="class-visual">
+                            <div class="class-badges">
+                                <span class="badge">45 Min</span>
+                                <span class="badge">All Levels</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" alt="Zen Connection">
+                        </div>
+                        <div class="class-info">
+                            <h3>Zen Connection</h3>
+                            <p class="class-description">Our signature meditation experience. We use guided visualization and advanced breathwork to help you bridge the gap between internal peace and daily life.</p>
+                            <div class="class-details-grid">
+                                <div class="detail-item">
+                                    <h4>What to Expect</h4>
+                                    <p>Guided stillness, deep pranayama, and internal reflection.</p>
+                                </div>
+                                <div class="detail-item">
+                                    <h4>Core Benefits</h4>
+                                    <p>Nervous system reset, cognitive clarity, and emotional balance.</p>
+                                </div>
+                            </div>
+                            <a href="pricing.html" class="btn btn-primary">Book This Session</a>
+                        </div>
+                    </div>
+
+                    <!-- Breathwork Mastery -->
+                    <div class="class-item-premium reveal-up">
+                        <div class="class-visual">
+                            <div class="class-badges">
+                                <span class="badge">30 Min</span>
+                                <span class="badge">Intermediate</span>
+                            </div>
+                            <img src="images/breathwork_mastery.png" alt="Breathwork Mastery">
+                        </div>
+                        <div class="class-info">
+                            <h3>Breathwork Mastery</h3>
+                            <p class="class-description">Master the mechanics of your life force. This session focuses on advanced pranayama techniques to increase CO2 tolerance and sharpen mental focus.</p>
+                            <div class="class-details-grid">
+                                <div class="detail-item">
+                                    <h4>What to Expect</h4>
+                                    <p>Intense breathing cycles, breath retention, and physiological awareness.</p>
+                                </div>
+                                <div class="detail-item">
+                                    <h4>Core Benefits</h4>
+                                    <p>Alkalized blood chemistry, reduced anxiety, and peak athletic performance.</p>
+                                </div>
+                            </div>
+                            <a href="pricing.html" class="btn btn-primary">Book This Session</a>
+                        </div>
+                    </div>
+
+                    <!-- Restorative Aura -->
+                    <div class="class-item-premium reveal-up">
+                        <div class="class-visual">
+                            <div class="class-badges">
+                                <span class="badge">90 Min</span>
+                                <span class="badge">All Levels</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?q=80&w=800&auto=format&fit=crop" alt="Restorative Aura">
+                        </div>
+                        <div class="class-info">
+                            <h3>Restorative Aura</h3>
+                            <p class="class-description">The ultimate antidote to modern burnout. A slow-paced Yin session supported by soft soundscapes to help you descend into a state of total cellular repair.</p>
+                            <div class="class-details-grid">
+                                <div class="detail-item">
+                                    <h4>What to Expect</h4>
+                                    <p>Long-held floor poses, meditative soundscapes, and deep relaxation.</p>
+                                </div>
+                                <div class="detail-item">
+                                    <h4>Core Benefits</h4>
+                                    <p>Fascial release, improved sleep quality, and deep parasympathetic activation.</p>
+                                </div>
+                            </div>
+                            <a href="pricing.html" class="btn btn-primary">Book This Session</a>
+                        </div>
+                    </div>
+
+                    <!-- Solar Power Flow -->
+                    <div class="class-item-premium reveal-up">
+                        <div class="class-visual">
+                            <div class="class-badges">
+                                <span class="badge">60 Min</span>
+                                <span class="badge">Advanced</span>
+                            </div>
+                            <img src="images/solar_power_flow.png" alt="Solar Power Flow">
+                        </div>
+                        <div class="class-info">
+                            <h3>Solar Power Flow</h3>
+                            <p class="class-description">Ignite your internal fire. This heat-building sequence focuses on power poses, arm balances, and transitions that demand absolute presence and strength.</p>
+                            <div class="class-details-grid">
+                                <div class="detail-item">
+                                    <h4>What to Expect</h4>
+                                    <p>Fast-paced transitions, inverted postures, and intense heat building.</p>
+                                </div>
+                                <div class="detail-item">
+                                    <h4>Core Benefits</h4>
+                                    <p>Total body conditioning, cardiovascular endurance, and unyielding discipline.</p>
+                                </div>
+                            </div>
+                            <a href="pricing.html" class="btn btn-primary">Book This Session</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-detailed">
+            <div class="container benefits-grid">
+                <div class="benefits-text reveal-up">
+                    <h4 class="section-subtitle">THE IMPACT</h4>
+                    <h2 style="font-size: 3rem; margin-bottom: 56px;">Elevate your vitality,<br>focus, and spirit</h2>
+                    <ul class="benefits-list">
+                        <li>
+                            <div class="icon">✓</div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 8px;">Holistic Activity</h4>
+                                <p style="font-size: 1.1rem; color: var(--color-text-light);">Dynamic sequences that energize your body and boost your stamina throughout the day.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">✓</div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 8px;">Mindful Strength</h4>
+                                <p style="font-size: 1.1rem; color: var(--color-text-light);">Build a resilient foundation while cultivating mental clarity and inner peace that lasts.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">✓</div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 8px;">Deep Presence</h4>
+                                <p style="font-size: 1.1rem; color: var(--color-text-light);">Enhance your everyday awareness, leading to greater well-being and sharper focus.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefits-image hover-lift reveal-up">
+                    <img src="images/normal_yoga.png" alt="Yoga Figure" style="width: 100%; border-radius: 40px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                    Soul & Root
+                </a>
+                <p>A sanctuary for mindfulness and dynamic vitality, helping you discover your inner peace.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Studio</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="teachers.html">Our Team</a>
+                    <a href="philosophy.html">Philosophy</a>
+                </div>
+                <div class="link-column">
+                    <h4>Classes</h4>
+                    <a href="classes.html">Foundation Flow</a>
+                    <a href="classes.html">Dynamic Strength</a>
+                    <a href="classes.html">Zen Connection</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Soul & Root. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+            }
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('fade-in-up');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

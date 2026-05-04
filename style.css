@@ -15,10 +15,11 @@
     --color-sand: #F4F1DE;
     --color-white: #FFFFFF;
     
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
-    --radius-xl: 32px;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+    --radius-xl: 40px;
+    --radius-standard: 40px;
     
     --shadow-sm: 0 8px 16px rgba(26, 60, 52, 0.04);
     --shadow-md: 0 16px 32px rgba(26, 60, 52, 0.08);
@@ -344,7 +345,7 @@ h1, h2, h3, h4, .logo {
     font-size: 4.5rem;
     font-weight: 500;
     margin-bottom: 24px;
-    color: var(--color-white);
+    color: var(--color-white) !important;
     text-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -352,8 +353,22 @@ h1, h2, h3, h4, .logo {
     font-size: 1.35rem;
     margin-bottom: 48px;
     color: rgba(255, 255, 255, 0.95);
+    opacity: 0.9;
     font-weight: 300;
     text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Page Hero (Inner Pages) */
+.page-hero h1 {
+    color: var(--color-white) !important;
+    font-size: 4rem;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.page-hero p {
+    color: var(--color-white);
+    font-size: 1.25rem;
+    opacity: 0.9;
 }
 
 .hero-buttons {
@@ -429,9 +444,9 @@ h1, h2, h3, h4, .logo {
 
 .img-wrap {
     position: absolute;
-    border-radius: var(--radius-lg);
+    border-radius: 40px;
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
 }
 
 .img-wrap img {
@@ -472,13 +487,16 @@ h1, h2, h3, h4, .logo {
 
 .premium-card {
     position: relative;
-    border-radius: var(--radius-lg);
+    height: 500px;
+    border-radius: 40px;
     overflow: hidden;
-    height: 480px;
-    display: block;
-    text-decoration: none;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 48px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-sm);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .premium-card:hover {
@@ -678,8 +696,10 @@ h1, h2, h3, h4, .logo {
 .teacher-card {
     text-align: center;
     padding: 24px;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     background-color: var(--color-bg);
+    transition: all 0.4s ease;
+    border: none;
 }
 
 .teacher-card img {
@@ -687,18 +707,21 @@ h1, h2, h3, h4, .logo {
     height: 400px;
     object-fit: cover;
     border-radius: var(--radius-md);
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .teacher-card h3 {
     font-size: 1.5rem;
+    color: var(--color-forest);
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .teacher-card p {
-    color: var(--color-text-light);
     font-size: 1rem;
+    color: var(--color-text-light);
+    font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
 /* Benefits Section */

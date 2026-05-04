@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Aura Philosophy | Soul & Root Core Values</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            height: 70vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(26, 60, 52, 0.4), rgba(26, 60, 52, 0.4)), url('images/meditate.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .philosophy-detailed {
+            padding: 140px 0;
+            background: var(--color-white);
+        }
+
+        .aura-focus {
+            max-width: 850px;
+            margin: 0 auto 100px;
+            text-align: center;
+        }
+
+        .aura-focus h2 {
+            font-size: 3rem;
+            margin-bottom: 32px;
+        }
+
+        .aura-focus p {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .editorial-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            margin-bottom: 140px;
+            align-items: center;
+        }
+
+        .editorial-section:nth-child(even) {
+            direction: rtl;
+        }
+        .editorial-section:nth-child(even) .editorial-img,
+        .editorial-section:nth-child(even) .editorial-content {
+            direction: ltr;
+        }
+
+        .editorial-img {
+            border-radius: 40px;
+            overflow: hidden;
+            height: 600px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .editorial-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .editorial-section:hover .editorial-img img {
+            transform: scale(1.05);
+        }
+
+        .editorial-content h3 {
+            font-size: 2.25rem;
+            margin-bottom: 24px;
+            color: var(--color-forest);
+        }
+
+        .editorial-content p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .foundational-truths {
+            padding: 140px 0;
+            background: var(--color-bg);
+            border-radius: 40px 40px 0 0;
+        }
+
+        .truth-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-top: 80px;
+        }
+
+        .truth-card {
+            background: rgba(255, 255, 255, 0.08); /* More pronounced glass by default */
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            padding: 60px 48px;
+            border-radius: 40px;
+            border: 1px solid rgba(26, 60, 52, 0.1); /* Subtle permanent border */
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            box-shadow: var(--shadow-md); /* Permanent shadow for depth */
+            transform: translateY(-8px); /* Permanent slight lift */
+        }
+
+        .truth-card::before {
+            content: attr(data-number);
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 8rem;
+            font-family: var(--heading-font);
+            font-weight: 800;
+            color: rgba(26, 60, 52, 0.05);
+            line-height: 1;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .truth-card:hover {
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .truth-icon {
+            width: 48px;
+            height: 48px;
+            color: var(--color-forest);
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .truth-card h4 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+            color: var(--color-forest);
+            position: relative;
+            z-index: 1;
+        }
+
+        .truth-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-text-light);
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar sticky-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                Soul & Root
+            </a>
+            <div class="hamburger" id="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <nav class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="classes.html">Classes</a>
+                    <a href="teachers.html">Teachers</a>
+                    <a href="philosophy.html" class="active">Philosophy</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <a href="pricing.html" class="btn btn-primary nav-cta">Book a Class</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container fade-in-up">
+                <span class="experience-badge" style="color: var(--color-sage);">THE AURA PHILOSOPHY</span>
+                <h1>Your Journey to<br>Inner Harmony</h1>
+            </div>
+        </section>
+
+        <section class="philosophy-detailed">
+            <div class="container">
+                <div class="aura-focus reveal-up">
+                    <h4 class="section-subtitle">OUR MANIFESTO</h4>
+                    <h2>The Soul & Root Way</h2>
+                    <p>We believe that true resilience is born in stillness. Our philosophy is built on the integration of biological science and ancient mindfulness to help you navigate modern life with absolute clarity.</p>
+                </div>
+
+                <!-- Section 1: Radical Stillness -->
+                <div class="editorial-section reveal-up">
+                    <div class="editorial-img">
+                        <img src="images/meditation_outdoor.png" alt="Radical Stillness">
+                    </div>
+                    <div class="editorial-content">
+                        <h3>Radical Stillness</h3>
+                        <p>In a world of constant noise, stillness is the ultimate act of rebellion. We teach you how to access the "Aura State"—a deep level of presence where the mind becomes a sanctuary rather than a source of stress.</p>
+                        <p>This isn't about avoiding the world; it's about building an internal quiet that you can carry with you into every boardroom and every home.</p>
+                    </div>
+                </div>
+
+                <!-- Section 2: Unshakable Resilience -->
+                <div class="editorial-section reveal-up">
+                    <div class="editorial-img">
+                        <img src="images/yoga_indoor.png" alt="Unshakable Resilience">
+                    </div>
+                    <div class="editorial-content">
+                        <h3>Unshakable Resilience</h3>
+                        <p>Strength is not just about muscle; it's about the nervous system. Our practices are designed to lower cortisol levels and increase your physiological capacity to handle high-pressure environments.</p>
+                        <p>We use dynamic movement and precision alignment to build a body that is as resilient as the mind is calm.</p>
+                    </div>
+                </div>
+
+                <!-- Section 3: Integrated Vitality -->
+                <div class="editorial-section reveal-up">
+                    <div class="editorial-img">
+                        <img src="images/normal_yoga.png" alt="Integrated Vitality">
+                    </div>
+                    <div class="editorial-content">
+                        <h3>Integrated Vitality</h3>
+                        <p>True vitality is the seamless flow between action and rest. By integrating breathwork mastery with fluid movement, we help you unlock a sustainable energy that doesn't rely on stimulants.</p>
+                        <p>At Soul & Root, we don't just train for the session; we train for the life you lead outside the studio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="foundational-truths reveal-up">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h4 class="section-subtitle">THE CORE</h4>
+                    <h2>Our Foundational Truths</h2>
+                </div>
+
+                <div class="truth-grid">
+                    <div class="truth-card" data-number="01">
+                        <div class="truth-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M12 12l8-8M12 12l-8 8M12 12l8 8M12 12l-8-8"></path></svg>
+                        </div>
+                        <h4>Biological Alignment</h4>
+                        <p>We prioritize the science of the nervous system. Every sequence is built to optimize your body's natural recovery cycles and hormonal balance.</p>
+                    </div>
+                    <div class="truth-card" data-number="02">
+                        <div class="truth-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8l4 4-4 4M8 12h8"></path></svg>
+                        </div>
+                        <h4>Mindful Precision</h4>
+                        <p>Precision is the path to presence. We focus on the tiny details of alignment to ensure safety and to ground the wandering mind.</p>
+                    </div>
+                    <div class="truth-card" data-number="03">
+                        <div class="truth-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h4>Radical Presence</h4>
+                        <p>The only moment that matters is the one you are in. We provide the tools to help you stay present, even when the world is chaotic.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5(5) 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                    Soul & Root
+                </a>
+                <p>A sanctuary for mindfulness and dynamic vitality, helping you discover your inner peace.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Studio</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="teachers.html">Our Team</a>
+                    <a href="philosophy.html">Philosophy</a>
+                </div>
+                <div class="link-column">
+                    <h4>Classes</h4>
+                    <a href="classes.html">Foundation Flow</a>
+                    <a href="classes.html">Dynamic Strength</a>
+                    <a href="classes.html">Zen Connection</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Soul & Root. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+            }
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('fade-in-up');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

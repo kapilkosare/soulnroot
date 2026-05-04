@@ -3,15 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & Memberships | Soul & Root</title>
-    <meta name="description" content="Choose the perfect membership plan for your wellness journey at Soul & Root.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Memberships & Pricing | Soul & Root Sanctuary</title>
+    <meta name="description" content="Choose the perfect membership plan for your wellness journey at Soul & Root. Transparent pricing for every level.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(10, 24, 20, 0.6), rgba(10, 24, 20, 0.6)), url('https://images.unsplash.com/photo-1599447421416-3414500d18a5?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+        
+        .pricing-section {
+            padding: 140px 0;
+            background: var(--color-white);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 80px;
+        }
+        
+        .pricing-card {
+            background: var(--color-bg);
+            padding: 60px 40px;
+            border-radius: 40px;
+            text-align: center;
+            border: 1px solid rgba(26, 60, 52, 0.05);
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-sage-dark);
+        }
+        
+        .pricing-card.featured {
+            background: var(--color-forest);
+            color: var(--color-white);
+            border-color: var(--color-forest);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-12px);
+        }
+        
+        .pricing-card h3 {
+            font-size: 2.25rem;
+            margin-bottom: 12px;
+        }
+        
+        .pricing-card.featured h3 {
+            color: var(--color-white);
+        }
+        
+        .price {
+            font-size: 4.5rem;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            margin: 32px 0;
+            line-height: 1;
+        }
+        
+        .price span {
+            font-size: 1.25rem;
+            font-weight: 500;
+            opacity: 0.7;
+        }
+        
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 48px;
+            flex-grow: 1;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.05rem;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--color-forest-light);
+            font-weight: 700;
+        }
+        
+        .featured .pricing-features li::before {
+            color: var(--color-sage);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-sage);
+            color: var(--color-forest);
+            padding: 8px 24px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .faq-section {
+            padding: 140px 0;
+            background: var(--color-bg);
+        }
+        
+        .faq-grid {
+            max-width: 900px;
+            margin: 80px auto 0;
+        }
+        
+        .faq-item {
+            background: var(--color-white);
+            padding: 48px;
+            border-radius: 40px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(26, 60, 52, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-sage-dark);
+        }
+        
+        .faq-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: var(--color-forest);
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
     <header class="navbar sticky-nav">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -24,68 +170,76 @@
             <div class="nav-menu" id="nav-menu">
                 <nav class="nav-links">
                     <a href="about.html">About</a>
-                    <a href="pricing.html" class="active">Pricing</a>
+                    <a href="classes.html">Classes</a>
+                    <a href="teachers.html">Teachers</a>
+                    <a href="philosophy.html">Philosophy</a>
                     <a href="contact.html">Contact</a>
                 </nav>
-                <a href="#schedule" class="btn btn-primary nav-cta">Book a Class</a>
+                <a href="pricing.html" class="btn btn-primary nav-cta">Book a Class</a>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1599447421416-3414500d18a5?q=80&w=1920&auto=format&fit=crop');">
-            <div class="container text-center">
-                <span class="experience-badge" style="color: var(--color-sage);">Memberships</span>
+        <section class="page-hero">
+            <div class="container fade-in-up">
+                <span class="experience-badge" style="color: var(--color-sage);">MEMBERSHIPS</span>
                 <h1>Invest in Your Harmony</h1>
-                <p>Simple, transparent plans designed to fit your lifestyle.</p>
             </div>
         </section>
 
-        <section class="pricing-section container">
-            <div class="pricing-grid">
-                <!-- Foundation -->
-                <div class="pricing-card">
-                    <h3>Foundation</h3>
-                    <p>Perfect for exploring the sanctuary.</p>
-                    <div class="price">$49<span>/mo</span></div>
-                    <ul class="pricing-features">
-                        <li>4 Classes per Month</li>
-                        <li>Digital Resource Library</li>
-                        <li>Basic Community Access</li>
-                        <li>Member-only Events</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline">Start Foundation</a>
+        <section class="pricing-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h4 class="section-subtitle">TRANSPARENT PLANS</h4>
+                    <h2>Choose Your Path to Vitality</h2>
                 </div>
+                
+                <div class="pricing-grid">
+                    <!-- Foundation -->
+                    <div class="pricing-card reveal-up">
+                        <h3>Foundation</h3>
+                        <p>Perfect for exploring the sanctuary at your own pace.</p>
+                        <div class="price">$49<span>/mo</span></div>
+                        <ul class="pricing-features">
+                            <li>4 Classes per Month</li>
+                            <li>Digital Resource Library</li>
+                            <li>Community Access</li>
+                            <li>10% Workshop Discount</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Choose Foundation</a>
+                    </div>
 
-                <!-- Balanced -->
-                <div class="pricing-card featured">
-                    <span class="experience-badge" style="margin-bottom: 16px; background: var(--color-forest); color: white;">Most Popular</span>
-                    <h3>Balanced</h3>
-                    <p>A deeper commitment to growth.</p>
-                    <div class="price">$129<span>/mo</span></div>
-                    <ul class="pricing-features">
-                        <li>12 Classes per Month</li>
-                        <li>Full Resource Library</li>
-                        <li>Priority Class Booking</li>
-                        <li>1 Guest Pass per Month</li>
-                        <li>Discount on Workshops</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Choose Balanced</a>
-                </div>
+                    <!-- Balanced -->
+                    <div class="pricing-card featured reveal-up" style="transition-delay: 0.2s;">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Balanced</h3>
+                        <p>Our most loved plan for consistent growth and practice.</p>
+                        <div class="price">$129<span>/mo</span></div>
+                        <ul class="pricing-features">
+                            <li>12 Classes per Month</li>
+                            <li>Full Digital Resource Access</li>
+                            <li>Priority Class Booking</li>
+                            <li>2 Guest Passes per Month</li>
+                            <li>20% Workshop Discount</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-light">Choose Balanced</a>
+                    </div>
 
-                <!-- Unlimited -->
-                <div class="pricing-card">
-                    <h3>Unlimited</h3>
-                    <p>The complete Soul & Root experience.</p>
-                    <div class="price">$199<span>/mo</span></div>
-                    <ul class="pricing-features">
-                        <li>Unlimited Classes</li>
-                        <li>VIP Resource Access</li>
-                        <li>Unlimited Guest Passes</li>
-                        <li>Private Consultation</li>
-                        <li>Early Workshop Access</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline">Join Unlimited</a>
+                    <!-- Unlimited -->
+                    <div class="pricing-card reveal-up" style="transition-delay: 0.4s;">
+                        <h3>Unlimited</h3>
+                        <p>Complete immersion for the dedicated practitioner.</p>
+                        <div class="price">$199<span>/mo</span></div>
+                        <ul class="pricing-features">
+                            <li>Unlimited In-Studio Classes</li>
+                            <li>VIP Digital Access</li>
+                            <li>1 Private Session per Month</li>
+                            <li>Unlimited Guest Passes</li>
+                            <li>30% Workshop Discount</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Choose Unlimited</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -94,20 +248,33 @@
             <div class="container">
                 <div class="section-header text-center">
                     <h2>Frequently Asked Questions</h2>
-                    <p>Everything you need to know about our memberships.</p>
+                    <p>Everything you need to know before starting your journey.</p>
                 </div>
-                <div class="faq-grid">
+                
+                <div class="faq-grid reveal-up">
                     <div class="faq-item">
                         <h4>Can I cancel my membership at any time?</h4>
                         <p>Yes, all our monthly memberships are commitment-free. You can cancel at any time with a 15-day notice before your next billing cycle.</p>
                     </div>
                     <div class="faq-item">
                         <h4>Do classes roll over to the next month?</h4>
-                        <p>Classes in the Foundation and Balanced plans must be used within the billing month and do not roll over.</p>
+                        <p>Classes in the Foundation and Balanced plans must be used within the billing month and do not roll over. However, you can always upgrade your plan if you find you need more sessions.</p>
                     </div>
                     <div class="faq-item">
-                        <h4>Do you offer student or corporate discounts?</h4>
-                        <p>Absolutely! Please reach out to us via the contact page with your details to learn about our special rates.</p>
+                        <h4>What should I bring to my first class?</h4>
+                        <p>We provide premium mats and props for all students. We recommend bringing a reusable water bottle and wearing comfortable, breathable attire. Just bring yourself and an open mind.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Are the classes suitable for absolute beginners?</h4>
+                        <p>Absolutely. Many of our practitioners started their journey right here. Our "Foundation Flow" and "Zen Connection" classes are specifically curated to guide beginners with extra care and anatomical precision.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How do I book a private 1-on-1 session?</h4>
+                        <p>Private sessions can be booked directly through our digital portal or at the studio front desk. If you are an Unlimited member, your monthly private session can be scheduled at any time with your preferred guide.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do you offer trial classes for new students?</h4>
+                        <p>Absolutely! We offer a one-week "Introduction to Aura" pass for just $25, which includes 3 classes of your choice.</p>
                     </div>
                 </div>
             </div>
@@ -121,43 +288,59 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
                     Soul & Root
                 </a>
-                <p>Unlocking your potential through mindful practices that nurture both spirit and strength. Your sanctuary for collective growth and inner peace.</p>
+                <p>A sanctuary for mindfulness and dynamic vitality, helping you discover your inner peace.</p>
             </div>
             <div class="footer-links">
-                <div class="link-group">
-                    <h4>Explore</h4>
-                    <a href="about.html">About</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="contact.html">Contact</a>
+                <div class="link-column">
+                    <h4>Studio</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="teachers.html">Our Team</a>
+                    <a href="philosophy.html">Philosophy</a>
                 </div>
-                <div class="link-group">
-                    <h4>Connect</h4>
-                    <a href="#">Instagram</a>
-                    <a href="#">Youtube</a>
-                    <a href="#">Newsletter</a>
+                <div class="link-column">
+                    <h4>Classes</h4>
+                    <a href="classes.html">Foundation Flow</a>
+                    <a href="classes.html">Dynamic Strength</a>
+                    <a href="classes.html">Zen Connection</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom container">
+        <div class="container footer-bottom">
             <p>&copy; 2026 Soul & Root. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
             }
+
+            // Scroll Effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Reveal Animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
         });
     </script>
 </body>

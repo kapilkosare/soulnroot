@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Guides | Soul & Root Expert Instructors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            height: 70vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(26, 60, 52, 0.6), rgba(26, 60, 52, 0.6)), url('images/hero_slide_3.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .teacher-grid-detailed {
+            padding: 140px 0;
+            background: var(--color-white);
+        }
+
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 100px;
+            margin-top: 80px;
+        }
+
+        .instructor-card {
+            background: var(--color-bg);
+            border-radius: 40px;
+            overflow: hidden;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: flex-start;
+            transition: all 0.5s ease;
+        }
+
+        /* Alternating Layout for Cinematic Flow */
+        .instructor-card:nth-child(even) {
+            direction: rtl;
+        }
+        .instructor-card:nth-child(even) .instructor-left,
+        .instructor-card:nth-child(even) .instructor-right {
+            direction: ltr;
+        }
+
+        .instructor-card:hover {
+            transform: scale(1.01);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .instructor-left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .instructor-left img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .instructor-right h3 {
+            font-size: 2.25rem;
+            margin-bottom: 12px;
+            color: var(--color-forest);
+        }
+
+        .instructor-right .role {
+            color: var(--color-forest-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: block;
+        }
+
+        .instructor-bio {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-text-light);
+            margin-bottom: 32px;
+        }
+
+        .specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .tag {
+            background: rgba(26, 60, 52, 0.05);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-forest);
+        }
+
+        .instructor-quote {
+            font-style: italic;
+            color: var(--color-text-light);
+            font-size: 1.05rem;
+            border-top: 1px solid rgba(26, 60, 52, 0.1);
+            padding-top: 32px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1200px) {
+            .instructor-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .instructor-card { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar sticky-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                Soul & Root
+            </a>
+            <div class="hamburger" id="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <nav class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="classes.html">Classes</a>
+                    <a href="teachers.html" class="active">Teachers</a>
+                    <a href="philosophy.html">Philosophy</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <a href="pricing.html" class="btn btn-primary nav-cta">Book a Class</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container fade-in-up">
+                <span class="experience-badge" style="color: var(--color-sage);">THE GUIDES</span>
+                <h1>Crafted with Expertise,<br>Led by Grace</h1>
+                <p style="font-size: 1.5rem; max-width: 800px; margin: 24px auto 0; opacity: 0.9;">Meet our experienced instructors who guide your practice with compassion and deep wisdom.</p>
+            </div>
+        </section>
+
+        <section class="teacher-grid-detailed">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <h4 class="section-subtitle">OUR COLLECTIVE</h4>
+                    <h2 style="margin-bottom: 32px;">The Souls of Root</h2>
+                    <p style="max-width: 850px; margin: 0 auto; font-size: 1.2rem; color: var(--color-text-light); line-height: 1.7;">Our guides are more than just instructors; they are architects of stillness and resilience. Each member of our collective has been hand-selected for their deep technical expertise, anatomical precision, and unique ability to bridge the gap between ancient wisdom and modern performance. From global certifications to decades of lived experience, they are here to ensure your journey is safe, powerful, and deeply transformative.</p>
+                </div>
+
+                <div class="instructor-grid">
+                    <!-- Sarah Jenkins -->
+                    <div class="instructor-card reveal-up">
+                        <div class="instructor-left">
+                            <img src="images/teacher_1.png" alt="Sarah Jenkins">
+                        </div>
+                        <div class="instructor-right">
+                            <h3>Sarah Jenkins</h3>
+                            <p class="role">Lead Vinyasa & Hatha Guide</p>
+                            <p class="instructor-bio">With over 12 years of practice across India and Bali, Sarah brings a deep anatomical understanding to her fluid Vinyasa flows. Her classes focus on mindful transitions.</p>
+                            <div class="specialties">
+                                <span class="tag">Anatomical Flow</span>
+                                <span class="tag">Pranayama</span>
+                            </div>
+                            <div class="instructor-quote">"True strength isn't just in the pose, but in the quiet transition between breaths."</div>
+                        </div>
+                    </div>
+
+                    <!-- Maya Thompson -->
+                    <div class="instructor-card reveal-up">
+                        <div class="instructor-left">
+                            <img src="images/teacher_2.png" alt="Maya Thompson">
+                        </div>
+                        <div class="instructor-right">
+                            <h3>Maya Thompson</h3>
+                            <p class="role">Power Yoga Specialist</p>
+                            <p class="instructor-bio">Maya’s background in professional dance informs her teaching style—dynamic, rhythmic, and highly intentional. She focuses on building functional core stability.</p>
+                            <div class="specialties">
+                                <span class="tag">Core Integration</span>
+                                <span class="tag">Dynamic Power</span>
+                            </div>
+                            <div class="instructor-quote">"Strength is found in the fluid connection of motion and courage."</div>
+                        </div>
+                    </div>
+
+                    <!-- Emma Davis -->
+                    <div class="instructor-card reveal-up">
+                        <div class="instructor-left">
+                            <img src="images/teacher_3.png" alt="Emma Davis">
+                        </div>
+                        <div class="instructor-right">
+                            <h3>Emma Davis</h3>
+                            <p class="role">Meditation & Restorative</p>
+                            <p class="instructor-bio">Emma specializes in the "Aura State"—a deep level of restorative rest. Her sessions are a blend of Yin yoga and guided visualization for a complete nervous system reset.</p>
+                            <div class="specialties">
+                                <span class="tag">Yin Yoga</span>
+                                <span class="tag">Guided Visualization</span>
+                            </div>
+                            <div class="instructor-quote">"Nurturing silence within the chaos is the ultimate act of self-care."</div>
+                        </div>
+                    </div>
+
+                    <!-- David Lee -->
+                    <div class="instructor-card reveal-up">
+                        <div class="instructor-left">
+                            <img src="images/teacher_4.png" alt="David Lee">
+                        </div>
+                        <div class="instructor-right">
+                            <h3>David Lee</h3>
+                            <p class="role">Mindful Movement Architect</p>
+                            <p class="instructor-bio">David combines traditional wisdom with modern mobility training to ensure longevity and grace in every practitioner's journey. Every posture is a step back to yourself.</p>
+                            <div class="specialties">
+                                <span class="tag">Mobility Training</span>
+                                <span class="tag">Traditional Wisdom</span>
+                            </div>
+                            <div class="instructor-quote">"We don't use the body to get into the pose; we use the pose to get into the body."</div>
+                        </div>
+                    </div>
+
+                    <!-- Sophia Chen -->
+                    <div class="instructor-card reveal-up">
+                        <div class="instructor-left">
+                            <img src="images/teacher_5.png" alt="Sophia Chen">
+                        </div>
+                        <div class="instructor-right">
+                            <h3>Sophia Chen</h3>
+                            <p class="role">Outdoor & Breathwork Guide</p>
+                            <p class="instructor-bio">Sophia is our specialist for outdoor immersion. She believes that nature is the ultimate meditation teacher. Her sessions synchronize your rhythm with the natural world.</p>
+                            <div class="specialties">
+                                <span class="tag">Nature Immersion</span>
+                                <span class="tag">Advanced Breathwork</span>
+                            </div>
+                            <div class="instructor-quote">"Connecting with the rhythm of the earth reminds us that we are whole."</div>
+                        </div>
+                    </div>
+
+                    <!-- James Wilson -->
+                    <div class="instructor-card reveal-up">
+                        <div class="instructor-left">
+                            <img src="images/teacher_6.png" alt="James Wilson">
+                        </div>
+                        <div class="instructor-right">
+                            <h3>James Wilson</h3>
+                            <p class="role">Pilates & Structural Expert</p>
+                            <p class="instructor-bio">James brings a technical, structural focus to our core classes. With a background in kinesiology, he ensures that every movement is anatomically sound and resilient.</p>
+                            <div class="specialties">
+                                <span class="tag">Kinesiology</span>
+                                <span class="tag">Pilates Mastery</span>
+                            </div>
+                            <div class="instructor-quote">"Building a resilient foundation for life starts with the core. Stability is freedom."</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                    Soul & Root
+                </a>
+                <p>A sanctuary for mindfulness and dynamic vitality, helping you discover your inner peace.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Studio</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="teachers.html">Our Team</a>
+                    <a href="philosophy.html">Philosophy</a>
+                </div>
+                <div class="link-column">
+                    <h4>Classes</h4>
+                    <a href="classes.html">Foundation Flow</a>
+                    <a href="classes.html">Dynamic Strength</a>
+                    <a href="classes.html">Zen Connection</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Soul & Root. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+            }
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('fade-in-up');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
