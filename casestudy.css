@@ -1,0 +1,458 @@
+/* Soul & Root Case Study Design System */
+:root {
+    --cs-forest: #1A3C34;
+    --cs-forest-light: #26594C;
+    --cs-sage: #E2EFE7;
+    --cs-sand: #FAF1DE;
+    --cs-white: #FBF8F6;
+    --cs-night: #0A1814;
+    --cs-text: #2D3E3A;
+    --cs-text-light: #6A7B77;
+    
+    --cs-font-heading: 'Outfit', sans-serif;
+    --cs-font-body: 'Inter', sans-serif;
+    
+    --cs-radius-sm: 8px;
+    --cs-radius-md: 16px;
+    --cs-radius-lg: 32px;
+    
+    --cs-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--cs-font-body);
+    background-color: var(--cs-white);
+    color: var(--cs-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Eye-Catchy Overrides */
+.cs-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(rgba(10, 24, 20, 0.02), rgba(10, 24, 20, 0.05));
+    position: relative;
+    padding-top: 120px;
+}
+
+.cs-header h1 {
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #0A1814 0%, #1A3C34 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-dark {
+    background-color: var(--cs-night);
+    color: var(--cs-white);
+}
+
+.section-dark .section-title, 
+.section-dark h2, 
+.section-dark h3 {
+    color: var(--cs-white);
+}
+
+.section-dark .section-num {
+    color: var(--cs-sage);
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Floating Wireframes */
+.floating-elements {
+    position: relative;
+    height: 600px;
+}
+
+.float-box {
+    position: absolute;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.4s ease;
+}
+
+.float-box:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.float-1 { width: 300px; top: 10%; left: 0; z-index: 2; }
+.float-2 { width: 400px; top: 20%; right: 0; z-index: 1; }
+.float-3 { width: 350px; bottom: 0; left: 20%; z-index: 3; }
+
+/* Header */
+.cs-header {
+    background-color: var(--cs-white);
+    padding-top: 80px;
+    text-align: left;
+}
+
+.cs-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cs-header h1 {
+    font-size: 7rem;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.cs-header .subtitle {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--cs-text-light);
+    margin-bottom: 60px;
+}
+
+.project-meta {
+    display: flex;
+    gap: 80px;
+    margin-top: 60px;
+}
+
+.meta-item h5 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--cs-text-light);
+    margin-bottom: 12px;
+}
+
+.meta-item p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.hero-mockup {
+    margin-top: 100px;
+    position: relative;
+    width: 110%;
+    margin-left: -5%;
+}
+
+.hero-mockup img {
+    width: 100%;
+    display: block;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.overview-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.overview-card p {
+    font-size: 0.95rem;
+    color: var(--cs-text-light);
+}
+
+.overview-card ul {
+    list-style: none;
+}
+
+.overview-card ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cs-text-light);
+}
+
+.overview-card ul li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--cs-forest);
+    border-radius: 50%;
+}
+
+/* Color System */
+.color-typography-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.color-palette {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.color-swatch {
+    flex: 1;
+    text-align: center;
+}
+
+.color-box {
+    height: 120px;
+    border-radius: var(--cs-radius-md);
+    margin-bottom: 16px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.color-swatch span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--cs-text-light);
+}
+
+/* Typography */
+.typo-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.font-item {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 32px;
+}
+
+.font-item h2 {
+    font-size: 4rem;
+    margin-bottom: 8px;
+}
+
+.font-item p {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    color: var(--cs-text-light);
+}
+
+/* Layout Strategy */
+.strategy-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 60px 0;
+}
+
+.strategy-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+    z-index: 0;
+}
+
+.timeline-node {
+    background: var(--cs-white);
+    padding: 20px;
+    z-index: 1;
+    text-align: center;
+}
+
+.timeline-node .node-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--cs-sage);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 1.2rem;
+}
+
+.timeline-node p {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Section Showcase */
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.showcase-item {
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--cs-radius-lg);
+    box-shadow: var(--cs-shadow);
+}
+
+.showcase-img {
+    width: 100%;
+    border-radius: var(--cs-radius-md);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.showcase-img img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.showcase-item:hover .showcase-img img {
+    transform: scale(1.05);
+}
+
+.showcase-item h3 {
+    margin-bottom: 12px;
+}
+
+.showcase-item p {
+    color: var(--cs-text-light);
+    font-size: 0.9rem;
+}
+
+/* Component Library */
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.comp-group h4 {
+    margin-bottom: 32px;
+    font-size: 0.9rem;
+    color: var(--cs-text-light);
+}
+
+.comp-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Layout Strategy Wireframes */
+.layout-wireframes {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.wireframe-box {
+    aspect-ratio: 9/16;
+    background: #EAEAEA;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wireframe-box::before {
+    content: '';
+    position: absolute;
+    top: 10%; left: 10%; right: 10%; height: 20%;
+    background: #DDD;
+}
+
+/* Interaction Design Cards */
+.interaction-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.interaction-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.interaction-preview {
+    height: 150px;
+    background: #F5F5F5;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.interaction-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.interaction-card p {
+    font-size: 0.75rem;
+    color: var(--cs-text-light);
+}
+
+/* Shadows & Radius */
+.radius-showcase {
+    display: flex;
+    gap: 20px;
+}
+
+.radius-box {
+    width: 60px;
+    height: 60px;
+    background: #EEE;
+    border: 1px solid #DDD;
+}
+
+.shadow-showcase {
+    display: flex;
+    gap: 20px;
+}
+
+.shadow-box {
+    width: 80px;
+    height: 80px;
+    background: #FFF;
+    border-radius: 12px;
+}
+
+@media (max-width: 1024px) {
+    .overview-grid, .color-typography-grid, .showcase-grid, .component-grid {
+        grid-template-columns: 1fr;
+    }
+    .cs-header h1 { font-size: 4rem; }
+    .strategy-timeline { flex-wrap: wrap; gap: 20px; }
+    .strategy-timeline::before { display: none; }
+}
