@@ -673,20 +673,43 @@ h1, h2, h3, h4, .logo {
 }
 
 @media (max-width: 992px) {
+    .community-bg {
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
     .community-content {
         flex-direction: column;
-        padding: 60px 40px;
+        padding: 40px 24px;
         text-align: center;
+        gap: 32px;
     }
     
-    .community-text h2, 
-    .community-stats .stat h3 {
-        font-size: 3.5rem;
+    .community-text h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        line-height: 1.1;
+        margin-bottom: 16px;
+    }
+    
+    .community-text p {
+        font-size: 0.95rem;
+        margin-bottom: 24px;
     }
     
     .community-stats {
         justify-content: center;
-        gap: 40px;
+        gap: 32px;
+        width: 100%;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 32px;
+    }
+
+    .community-stats .stat h3 {
+        font-size: 2.2rem;
+    }
+    
+    .community-stats .stat p {
+        font-size: 0.75rem;
     }
 }
 
@@ -1107,6 +1130,109 @@ h1, h2, h3, h4, .logo {
 }
 
 @media (max-width: 768px) {
+    .premium-session-cards,
+    .logo-construction, .persona-card, .ui-focus {
+        grid-template-columns: 1fr !important;
+        padding: 40px 20px !important;
+    }
+    
+    .persona-img {
+        height: 300px !important;
+    }
+    
+    .process-roadmap {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .process-roadmap::after {
+        display: none;
+    }
+
+    /* Experience Section Mobile Optimization */
+    .experience-bg {
+        padding: 60px 20px !important;
+        min-height: auto !important;
+        justify-content: center !important;
+    }
+    
+    .experience-bg::before {
+        width: 100% !important;
+        background: linear-gradient(rgba(26, 60, 52, 0.8), rgba(26, 60, 52, 0.9)) !important;
+    }
+
+    .experience-content {
+        padding: 40px 24px !important;
+        text-align: center;
+        max-width: 100% !important;
+    }
+    
+    .experience-content h2 {
+        font-size: 2.2rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .hero-buttons {
+        flex-direction: column !important;
+        gap: 16px !important;
+        align-items: center !important;
+    }
+    
+    .hero-buttons a {
+        width: 100% !important;
+        max-width: 300px;
+        margin: 0 !important;
+        text-align: center;
+    }
+
+    .premium-session-cards,
+    .teacher-grid,
+    .editorial-section,
+    .truth-grid,
+    .pricing-grid,
+    .faq-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        margin-bottom: 80px !important;
+        direction: ltr !important;
+    }
+
+    .pricing-card {
+        padding: 40px 24px !important;
+    }
+
+    .price {
+        font-size: 3rem !important;
+    }
+
+    .pricing-card.featured {
+        transform: scale(1) !important;
+        margin: 20px 0;
+    }
+
+    .faq-item {
+        padding: 40px 24px !important;
+    }
+
+    .truth-card {
+        padding: 40px 24px !important;
+    }
+
+    .truth-card::before {
+        font-size: 5rem !important;
+        top: -10px !important;
+    }
+
+    .editorial-img {
+        height: 350px !important;
+        border-radius: 24px !important;
+    }
+    
+    .editorial-content h3 {
+        font-size: 1.8rem !important;
+        margin-bottom: 16px !important;
+    }
+
     .premium-session-cards,
     .teacher-grid {
         grid-template-columns: 1fr;
@@ -1774,6 +1900,7 @@ h1, h2, h3, h4, .logo {
     position: relative;
     height: 550px;
     overflow: hidden;
+    padding: 20px; /* Added padding for inset effect */
 }
 
 .class-visual img {
@@ -1781,6 +1908,7 @@ h1, h2, h3, h4, .logo {
     height: 100%;
     object-fit: cover;
     transition: transform 0.8s ease;
+    border-radius: 30px; /* Restored and polished radius */
 }
 
 .class-item-premium:hover .class-visual img {
@@ -2531,3 +2659,202 @@ h1, h2, h3, h4, .logo {
     gap: 60px;
     box-shadow: var(--shadow-lg);
 }
+/* --- GLOBAL RESPONSIVE UX SYSTEM --- */
+
+/* Standard Container Padding for Mobile */
+.container {
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    /* Section Headers Scaling */
+    .section-header h2, .v3-title, .cs-title {
+        font-size: clamp(2.5rem, 8vw, 4rem) !important;
+        line-height: 1.1 !important;
+    }
+    
+    .promise-text h2, .about-features h2, .story-text h2, .zen-header h2 {
+        font-size: 2.8rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    /* Grid Collapsing */
+    .instructor-card, .class-item-premium, .adv-feature-grid, .branding-grid, .bh-content-grid, .promise-layout, .features-container, .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        direction: ltr !important; 
+    }
+    
+    .instructor-card:nth-child(even), .class-item-premium:nth-child(even) {
+        direction: ltr !important;
+    }
+    
+    .instructor-left img, .class-visual {
+        height: 350px !important;
+    }
+    
+    .stats-grid, .organic-grid-three, .adv-gallery, .bh-stat-row {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    .photo-style {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* Contact Page Adjustments for Tablet & Mobile */
+    .contact-page-wrapper {
+        flex-direction: column !important;
+        padding: 120px 24px 60px !important;
+        height: auto !important;
+        min-height: 100vh !important;
+    }
+
+    .centric-glass-card {
+        padding: 40px 24px !important;
+        width: 100% !important;
+        max-width: 600px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .centric-glass-card h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+
+    .footer-connection-ribbon {
+        position: relative !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        width: 100% !important;
+        max-width: 320px;
+        margin: 0 auto !important;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 32px !important;
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Section Spacing */
+    section {
+        padding: 80px 0 !important;
+    }
+
+    /* Hero Sections */
+    .hero h1, .page-hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3.5rem) !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .hero-content p, .page-hero p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 40px !important;
+    }
+
+    /* About Image Stack Fix (Crucial for Overlap) */
+    .about-images {
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .img-stack-1, .img-stack-2 {
+        width: 100% !important;
+        height: 300px !important;
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        border-radius: 20px !important;
+        border: none !important;
+    }
+
+    /* Cards & Glass Containers */
+    .centric-glass-card {
+        padding: 40px 24px !important;
+        width: 100% !important;
+        border-radius: 20px !important;
+    }
+    
+    .centric-glass-card h1 {
+        font-size: 2.2rem !important;
+    }
+
+    /* Instructor & Class Cards Padding */
+    .instructor-card, .class-info {
+        padding: 30px 20px !important;
+    }
+    
+    .instructor-right h3, .class-info h3 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Promise & Aura Fixes */
+    .promise-text h2 {
+        font-size: 2.5rem !important;
+    }
+    
+    .promise-text p {
+        font-size: 1.1rem !important;
+        margin-bottom: 40px !important;
+    }
+    
+    .aura-card-layered {
+        padding: 30px 20px !important;
+        transform: none !important; /* Remove hover translate on mobile */
+    }
+
+    /* Footer Optimization */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        text-align: left;
+    }
+    
+    .footer-connection-ribbon {
+        position: relative !important;
+        bottom: auto !important;
+        gap: 40px !important;
+        margin-top: 60px;
+        justify-content: flex-start !important;
+    }
+    
+    .newsletter-form {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card h3, .bh-number {
+        font-size: 2.5rem !important;
+    }
+    
+    .btn-aura, .btn-glass-submit {
+        padding: 14px 28px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .cs-num {
+        font-size: 6rem !important;
+    }
+
+    .cs-num {
+        font-size: 6rem !important;
+    }
+}
+

@@ -206,3 +206,29 @@ body {
 .cta-circle:hover {
     transform: scale(1.2) rotate(10deg);
 }
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .v3-title { font-size: 5rem; }
+    .color-overlap { grid-template-columns: 1fr; }
+    .color-block { height: 50vh; }
+    .scrolling-text { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-v3 .big-word { font-size: 5rem; }
+    .hero-v3 .tagline { position: relative; bottom: 0; right: 0; margin-top: 40px; font-size: 0.8rem; letter-spacing: 0.2em; }
+    
+    .section-v3 { padding: 80px 5%; min-height: auto; }
+    .v3-title { font-size: 3.5rem; }
+    
+    .image-reveal { height: 40vh; }
+    
+    .color-block h3 { font-size: 3rem; }
+    
+    .scrolling-text { font-size: 2rem; padding: 20px 0; }
+    
+    .footer-v3 h2 { font-size: 6rem; }
+    .cta-circle { width: 150px; height: 150px; font-size: 0.9rem; }
+}
+

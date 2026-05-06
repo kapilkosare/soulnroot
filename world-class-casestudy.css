@@ -301,3 +301,41 @@ body {
     font-size: 12rem;
     line-height: 0.8;
 }
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .cs-title { font-size: 5rem; }
+    .cs-num { font-size: 15rem; right: -10px; }
+    .shot-grid { gap: 30px; }
+    .ui-focus { flex-direction: column; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+    .side-index { display: none; } /* Hide sidebar index on mobile */
+    .cs-section { padding: 100px 5%; }
+    .cs-title { font-size: 3.5rem; }
+    .cs-num { font-size: 8rem; top: 20px; right: 20px; opacity: 0.05; }
+    
+    .logo-construction, .persona-card {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+    
+    .persona-img { height: 300px; }
+    
+    .process-roadmap {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .process-roadmap::after { display: none; }
+    
+    .problem-box, .solution-box { padding: 30px 20px; }
+    
+    .swatch-circle { width: 80px; height: 80px; font-size: 0.6rem; }
+    
+    .fin-v4 h2 { font-size: 6rem; }
+    
+    .shot-grid { grid-template-columns: 1fr; }
+    .shot-card { margin-top: 0 !important; }
+}
+
