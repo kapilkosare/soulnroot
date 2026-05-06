@@ -1,0 +1,208 @@
+/* Soul & Root Ultra Modern & Eye-Catchy Case Study */
+:root {
+    --forest: #1A3C34;
+    --sage: #8FA199;
+    --mint: #D9E6E1;
+    --sand: #FAF1DE;
+    --white: #FFFFFF;
+    --night: #0A1814;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--night);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Eye-Catchy Background Logic */
+.bg-gradient {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(26, 60, 52, 0.6) 0%, transparent 60%);
+    transition: background 0.1s ease;
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0.05;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+}
+
+/* Massive Kinetic Hero */
+.hero-v3 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero-v3 .big-word {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(8rem, 20vw, 25rem);
+    font-weight: 900;
+    line-height: 0.75;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    display: block;
+}
+
+.hero-v3 .big-word.outline {
+    -webkit-text-stroke: 2px var(--sage);
+    -webkit-text-fill-color: transparent;
+    opacity: 0.3;
+}
+
+.hero-v3 .tagline {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 1.2rem;
+    letter-spacing: 0.4em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+/* Staggered Sections */
+.section-v3 {
+    min-height: 100vh;
+    padding: 120px 10%;
+    display: flex;
+    align-items: center;
+}
+
+.v3-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(4rem, 8vw, 10rem);
+    margin-bottom: 40px;
+}
+
+/* Slanted Image Display */
+.image-reveal {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+    transition: clip-path 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.image-reveal.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.image-reveal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 2s ease;
+}
+
+.image-reveal.active img {
+    transform: scale(1);
+}
+
+/* Color blocks with text overlaps */
+.color-overlap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+}
+
+.color-block {
+    height: 100vh;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.color-block h3 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+/* Modern Mockup Frame */
+.device-frame {
+    background: #111;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.device-frame img {
+    width: 100%;
+    border-radius: 30px;
+    display: block;
+}
+
+/* Kinetic Scrolling List */
+.scrolling-text {
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 40px 0;
+    background: var(--forest);
+    color: var(--mint);
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* Interactive Footer */
+.footer-v3 {
+    height: 100vh;
+    background: var(--sand);
+    color: var(--forest);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-v3 h2 {
+    font-size: 15rem;
+    line-height: 0.8;
+}
+
+.cta-circle {
+    width: 200px;
+    height: 200px;
+    background: var(--forest);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: -50px;
+    transition: transform 0.4s ease;
+}
+
+.cta-circle:hover {
+    transform: scale(1.2) rotate(10deg);
+}
